@@ -26,19 +26,19 @@ app.get('/movie', function handleGetMoves(req, res) {
   let response = MOVIEDATA;
 
   if(req.query.genre) {
-    response = response.filter(oneMovie => {
+    response = response.filter(oneMovie => 
       oneMovie.genre.toLowerCase().includes(req.query.genre.toLowerCase())
-    })
+    )
   }
   if(req.query.country) {
-    response = response.filter(oneMovie => {
+    response = response.filter(oneMovie => 
       oneMovie.country.toLowerCase().includes(req.query.country.toLowerCase())
-    })
+    )
   }
   if(req.query.avg_vote) {
-    response = response.filter(oneMovie => {
-      Number(oneMovie.avg_vote) >= Numver(req.query.avg_vote)
-    })
+    response = response.filter(oneMovie => 
+      Number(oneMovie.avg_vote) >= Number(req.query.avg_vote)
+    )
   }
   res.json(response)
 })
